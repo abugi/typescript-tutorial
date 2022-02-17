@@ -1,52 +1,76 @@
-/*
-   Note:
-   1. the main difference between typescript and javascript is the type definition.
-    Typescript uses strict type and javascript uses dynamic types. this means that
-    when a variable is initialized in typescript with a certain datatype, it cannot
-    be changed later. e.g
-*/
-
-let _name = 'Fatimah'
-let height = 5.4
-let isMarried = true
+// Array
+let list = ['macbook', 'iWatch', 'iPadPro']
 
 /*
-   Looking at the exaxmples above...
-
-   1. variable _name can never be reassigned to another value that is not a string
-   2. height can be reassigned to a value that is a number datatype but never to a 
-   different datatype
-   3. the value of isMarried must always be a Boolean
+   To typescript:
+   1. the variable 'list' can only be assigned the a value that is an array
+   2. the array can contain only string data types
 */
 
-// So the following will not work in typescript
+// So unlike javascript, the following will not work in typescript
 
-// _name = 2001 //number is not reassignable to a string
-// height = '5.4' // string is not reassignable to a number
-// isMarried = 'yes' // string is not reassignable to a boolean
+// list = 'macbook'
+// list.push(12)
+// list[0] = {name: 'teema'}
 
+// Instead
+list = ['1','2','3']
+list.push('12')
+list[0] = '11'
+
+
+// Lets look at another example
+let mixed = ['one', 1, 'two', 2]
 
 /*
-   Notice how we did not have to specify the types?
-
-   Well, thats because typescript uses 'inference'
-   In inference, typescript determines the type of a varibale based on the value
-   assigned to it.
+   To typescript:
+   1. the variable 'list' can only be assigned the a value that is an array
+   2. the array contain a mixture of string and number data types only
 */
 
+// So the following will be valid
+mixed = ['sam dede', 49]
+mixed.push('samson noah', 46)
 
-//Specifying type passed in to a function
-// const circ = (diameter) => {
-//    return diameter * Math.PI
-// }
+// and this will be invalid
+// mixed = ['age', 12, false]
+// mixed.push(['next'])
 
-// At the moment we can pass anything to this function because not type is specified
-// console.log(circ('me'))
+console.log(list)
+console.log(mixed)
 
-// but the only meaningful data type for this function is a number
-const circ = (diameter: number) => { // now we cannot pass in any data except number
-   return diameter * Math.PI
+
+// Object
+let wife = {
+   name: 'Neematallah',
+   age: 27,
+   isCute: true
 }
 
-// console.log(circ('12')) // this is wrong
-console.log(circ(12))
+/*
+   Considering the object above, the following rules apply in typescript
+
+   1. the variable wife can only be assigned an object
+   2. any object assigned to the variable must have the same structure i.e
+    the same of keys and same value types
+   3. once an object is defined, we cannot add additional properties to it
+   4. the existing properties of the object can be changed with a value of same type
+*/
+
+// So the following will not work
+
+// wife = 'Neematallahi'
+
+// wife = {
+//    name: 'Neemat',
+//    age: '27',
+//    isCute: 'false'
+// }
+
+// wife.color = 'black'
+
+// the following will be valid
+wife.age = 19
+wife.name = 'Neemat'
+
+console.log(wife)
