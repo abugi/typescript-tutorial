@@ -91,3 +91,42 @@ console.log(uid)
 
 
 // Explicit type in Objects
+let object1: object // object1 can only hold values which are objects
+
+// Examples
+object1 = {             // correct
+name: 'peter rabbit',
+occupation: 'actor'
+}
+
+object1 = [] // this is also correct because Array is a form of object 
+
+object1 = function(){} // this is also correct because is an object type
+
+// object1 = 12 // wrong ❌
+
+console.log(object1)
+
+// If you wnat to be more specific on the type object
+let object2: {
+   name: string,
+   role: string,
+   age: number,
+   isAlive: boolean
+} // now only actual objects can be store in this variable and must have the same structure and defined data types
+
+object2 = {
+   name: 'umar bn affan',
+   role: 'caliph',
+   age: 71,
+   isAlive: false
+}
+
+// object2 = {
+//    name: 'yahaya haifan',
+//    role: 'da\'i',
+//    age: '70',
+//    isAlive: true
+// }  // this is not correct because the age property must be a number and not a string
+
+console.log(object2)
