@@ -41,3 +41,13 @@ let result = multiply(12, 13);
 result = 23; // correct
 // result = '23'
 console.log(result);
+/*
+    When a funtion does not explicitly return  a value,
+    the return type for such funtion is "void"
+*/
+// Example
+const devide = function (a, b) {
+    console.log(a / b);
+};
+console.log(devide(12, 3));
+// the type of devide is void
